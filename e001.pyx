@@ -19,6 +19,7 @@ joint_quotient = max_int/(first_divisor * second_divisor)
 # Sum up all integers from 0 to the quotient, relying on the
 # fact that ∑ of the first n integers = (n)(n+1)/2
 # Then, multiply by the divisors to get sum of all multiples
+
 first_sum = (first_divisor) * (first_quotient) * (first_quotient + 1)/2
 second_sum = (second_divisor) * (second_quotient) * (second_quotient + 1)/2
 joint_sum = (first_divisor * second_divisor) * (joint_quotient) * (joint_quotient + 1)/2
