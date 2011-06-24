@@ -18,6 +18,7 @@ subprocess.call(call, shell = True)
 
 shutil.rmtree('build')
 os.remove(phile[:-4] + '.c')
+os.remove('setup.py')
 
 print '\n'
 call = 'python -c "import %s"' % phile[:-4]
