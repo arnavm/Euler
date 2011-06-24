@@ -1,17 +1,20 @@
 # What is the largest prime factor of the number 600851475143?
 
-cimport cython
-
 cdef extern from "math.h":
     double sqrt(double x)
     int ceil(double x)
 
 cdef double targetPrime = 600851475143
 
-# After looking into several prime factorization algorithms,
-# I settled on Fermat's factorization method.
-
 primeFactors = []
+
+# This uses Fermat's method to factorize integers. It relies on
+# the fact that all odd integers can be represented as the difference
+# of two squares: N = a^2 - b^2 = (a + b)(a - b). We start by picking
+# a as the smallest integer greater than √N. We increment a until we 
+# find b such that b is a perfect square: b = √(a^2 - N). N can thus 
+# be decomposed into the factors (a + b) and (a - b). We then recursively
+# perform Fermat's method on each of these two factors until we find a prime.
 
 cdef void FermatFactorize(double composite):
     cdef int a = ceil(sqrt(composite))
