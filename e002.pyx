@@ -4,8 +4,9 @@
 
 cdef extern from "math.h":
     double sqrt(double x)
+    long lround(double x)
 
-cdef int max_fib = 4000000
+cdef long max_fib = 4000000
 
 # The ratio of two consecutive terms in the Fibonacci sequence approaches
 # phi, the golden ratio, approximately 1.61803...
@@ -20,11 +21,11 @@ cdef double phi = (1 + sqrt(5))/2
 # Thus, we can calculate the next even Fibonacci number by multiplying
 # the previous even Fibonacci number by phi^3
 
-cdef int nextEvenFib, runningSum
+cdef long nextEvenFib, runningSum
 
-cdef int sumEvenFibs(int currentEvenFib):
+cdef long sumEvenFibs(long currentEvenFib):
     if currentEvenFib <= max_fib:
-        nextEvenFib = int(round(currentEvenFib * phi**3))
+        nextEvenFib = lround(currentEvenFib * phi**3)
         runningSum = currentEvenFib + sumEvenFibs(nextEvenFib)
         return runningSum
     else:
@@ -32,6 +33,6 @@ cdef int sumEvenFibs(int currentEvenFib):
 
 # Start summing from 2, as zero is negligible
 
-cdef int total = sumEvenFibs(2)
+cdef long total = sumEvenFibs(2)
 
 print total
