@@ -22,6 +22,6 @@ cdef int joint_sum = (first_divisor * second_divisor) * (joint_quotient) * (join
 # Calculate total using inclusion-exclusion principle:
 # union(A, B) = A + B - intersection(A, B)
 
-cdef int total = first_sum + second_sum - joint_sum
+cdef int total = int(first_sum + second_sum - joint_sum)
 
 print total
