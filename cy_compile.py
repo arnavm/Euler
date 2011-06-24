@@ -18,3 +18,9 @@ subprocess.call(call, shell = True)
 
 shutil.rmtree('build')
 os.remove(phile[:-4] + '.c')
+
+print '\n'
+call = 'python -c "import %s"' % phile[:-4]
+subprocess.call(call, shell = True)
+
+os.remove(phile[:-4] + '.so')
