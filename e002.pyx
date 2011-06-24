@@ -5,7 +5,7 @@ cdef extern from "math.h":
     double sqrt(double x)
 
 
-cdef int max_fib, nextEvenFib, runningSum
+cdef int max_fib, nextEvenFib, runningSum, total
 max_fib = 4000000
 
 # The ratio of two consecutive terms in the Fibonacci sequence approaches
