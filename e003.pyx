@@ -26,7 +26,7 @@ cdef void FermatFactorize(double composite):
     cdef double factor2 = a - b
     if factor2 == 1:
         global primeFactors
-        primeFactors.append(int(factor1))
+        primeFactors.append(<int>factor1)
     else:
         FermatFactorize(factor1)
         FermatFactorize(factor2)
