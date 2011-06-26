@@ -6,7 +6,7 @@ cdef extern from "math.h":
 
 cdef double targetPrime = 600851475143
 
-primeFactors = []
+cdef int maxFactor = 1
 
 # This uses Fermat's method to factorize integers. It relies on
 # the fact that all odd integers can be represented as the difference
@@ -25,12 +25,13 @@ cdef void FermatFactorize(double composite):
     cdef double factor1 = a + b
     cdef double factor2 = a - b
     if factor2 == 1:
-        global primeFactors
-        primeFactors.append(<int>factor1)
+        if factor1 > maxFactor:
+            global maxFactor
+            maxFactor = <int>factor1
     else:
         FermatFactorize(factor1)
         FermatFactorize(factor2)
 
 FermatFactorize(targetPrime)
 
-print max(primeFactors)
+print maxFactor
