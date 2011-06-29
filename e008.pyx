@@ -42,7 +42,7 @@ cdef unsigned int fiveDigits, maxProduct, product, index
 
 # Because C (and correspondingly Cython) does not have a function to automatically
 # retrieve a substring of a larger string, we have to write this function ourselves.
-# The implementation follow's that from Steve Summit's C notes at www.eskimo.com/~scs
+# The implementation follows that from Steve Summit's C notes at www.eskimo.com/~scs
 
 cdef void substr(char dest[], char* src, unsigned int offset, int length):
     cdef unsigned int substrIdx
