@@ -4,7 +4,8 @@ cdef extern from "math.h":
     double sqrt(double x)
     double ceil(double x)
 
-cdef unsigned int n, triangularNumber, divisor, numDivisors
+cdef unsigned int n = 1
+cdef unsigned int triangularNumber, divisor, numDivisors
 
 # The triangular numbers are 1, 3, 6, 10, 15, 21, 28, ...
 # A quick way to obtain the nth triangular number is to recognize that it is the sum
