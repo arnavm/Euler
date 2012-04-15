@@ -13,7 +13,7 @@ print >> f, "from Cython.Distutils import build_ext"
 print >> f, "setup(cmdclass = {'build_ext': build_ext}, ext_modules = [Extension('%s', ['%s'])])" % (phile[:-4], phile)
 f.close()
 
-call = "python setup.py build_ext --inplace"
+call = "CC=/usr/bin/gcc-4.0 python setup.py build_ext --inplace"
 subprocess.call(call, shell = True)
 
 shutil.rmtree('build')
